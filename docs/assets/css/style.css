@@ -35,16 +35,23 @@ body, html {
     flex-direction: column;
 }
 
+/* --- REPLACE WITH THIS ENTIRE BLOCK --- */
+
+/* Updated button style for centering */
 .nav-button {
-    padding: 10px 15px;
+    padding: 10px;
     margin-bottom: 15px;
     background-color: #333;
     color: #fff;
     border: 2px solid #555;
     text-decoration: none;
     border-radius: 5px;
-    text-align: center;
     transition: background-color 0.3s, border-color 0.3s;
+    /* New styles for centering icon/text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px; /* Gives the text buttons a nice width */
 }
 
 .nav-button:hover {
@@ -56,6 +63,24 @@ body, html {
     background-color: #eee;
     border-color: #fff;
     color: #000;
+}
+
+/* New style specifically for the GitHub button */
+.github-button {
+    min-width: 0; /* The github button doesn't need a min-width */
+}
+
+/* New style for the SVG icon inside the button */
+.github-button svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+    transition: fill 0.3s;
+}
+
+/* New style for the icon on hover */
+.nav-button:hover svg {
+    fill: #000;
 }
 
 /* 3. Page Content Sections */
