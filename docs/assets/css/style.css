@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap');
 
 /* --- CORE LAYOUT & BACKGROUND --- */
-/* Replace with this */
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     color: white;
     scroll-behavior: smooth;
-    background: transparent; /* This allows the video to be seen */
+    background: transparent;
     font-size: 1rem;
 }
 
+/* UPDATED VIDEO STYLES */
 .video-background {
     position: fixed;
     top: 0;
@@ -19,13 +19,23 @@ html, body {
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    overflow: hidden; /* Prevents accidental scrollbars */
+    display: flex;
+}
+
+.video-wrapper {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-wrapper.mirrored {
+    transform: scaleX(-1) scaleY(-1); /* Flips horizontally and vertically */
 }
 
 .video-background video {
     width: 100%;
     height: 100%;
-    /* This is the key property */
     object-fit: cover; 
 }
 
@@ -78,7 +88,7 @@ h3 { font-size: 1.5rem; }
 }
 
 .nav-button {
-    padding: 14px; /* Increased from 10px */
+    padding: 14px;
     margin-bottom: 15px;
     background-color: #333;
     color: #fff;
@@ -91,13 +101,14 @@ h3 { font-size: 1.5rem; }
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 100px; /* Increased from 80px */
+    min-width: 100px;
 }
 .nav-button:hover { background-color: #555; border-color: #777; }
 .nav-button.active { background-color: #eee; border-color: #fff; color: #000; }
 .github-button { min-width: 0; }
 .github-button svg { width: 24px; height: 24px; fill: #fff; transition: fill 0.3s; }
 .nav-button:hover svg { fill: #000; }
+
 /* --- MOUSE TRAIL --- */
 .trail {
   position: absolute;
@@ -167,8 +178,8 @@ h3 { font-size: 1.5rem; }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax as needed */
-    gap: 15px; /* Adjust the gap as needed */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
     margin-top: 20px;
 }
 
@@ -177,8 +188,8 @@ h3 { font-size: 1.5rem; }
 }
 
 .gallery-item img {
-    width: 100%; /* Ensures images scale down */
-    height: auto; /* Maintains aspect ratio */
+    width: 100%;
+    height: auto;
     border-radius: 8px;
     border: 3px solid #555;
     display: block;
@@ -254,8 +265,6 @@ h3 { font-size: 1.5rem; }
     border-radius: 5px;
 }
 /* -- HEADING HOVER SHINE EFFECT -- */
-
-/* Target all headings including the main title */
 h1,
 .content section h2,
 .content section h3 {
@@ -264,7 +273,6 @@ h1,
     padding-bottom: 8px;
 }
 
-/* Create the hidden underline for all headings */
 h1::after,
 .content section h2::after,
 .content section h3::after {
@@ -281,7 +289,6 @@ h1::after,
     transition: transform 0.4s ease-out;
 }
 
-/* Make the line appear on hover for all headings */
 h1:hover::after,
 .content section h2:hover::after,
 .content section h3:hover::after {
