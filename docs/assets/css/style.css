@@ -9,6 +9,9 @@ body, html {
     color: white;
     scroll-behavior: smooth;
 }
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif; /* Use Orbitron for headings */
+}
 
 /* 1. Video Background */
 .video-background {
