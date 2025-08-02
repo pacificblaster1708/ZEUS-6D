@@ -30,7 +30,7 @@ html, body {
 }
 
 .video-wrapper.mirrored {
-    transform: scaleX(-1) scaleY(-1); /* Flips horizontally and vertically */
+    transform: scaleX(-1); /* Flips horizontally and vertically */
 }
 
 .video-background video {
