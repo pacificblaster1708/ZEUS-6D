@@ -5,3 +5,12 @@
   width: 100%; height: 100%;
   z-index: -1;
 }
+// electric blue on charcoal
+$background-color: #0a0d14;
+$text-color:       #e0eafe;
+$link-color:       #46b5ff;
+$accent-color:     #ffe600;
+
+body { background:$background-color; color:$text-color; }
+h1,h2,h3{ color:$accent-color; }
+a{ color:$link-color; }
