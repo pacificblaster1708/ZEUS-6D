@@ -43,7 +43,7 @@ h3 {
 }
 .content-wrapper {
     position: relative;
-    z-index: 2; /* Higher z-index than the video */
+    z-index: auto;
 }
 
 /* 2. Side Navigation */
