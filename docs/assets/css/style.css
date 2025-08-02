@@ -29,14 +29,15 @@ html, body {
     position: relative;
 }
 
+/* FIXED: Re-added the vertical flip as previously requested */
 .video-wrapper.mirrored {
-    transform: scaleX(-1); /* Flips horizontally and vertically */
+    transform: scaleX(-1) scaleY(-1); /* Flips horizontally and vertically */
 }
 
 .video-background video {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 .video-background::after {
@@ -176,18 +177,19 @@ h3 { font-size: 1.5rem; }
 }
 .home-content .cta-buttons a:hover { transform: scale(1.05); }
 
+
+/* -- GALLERY STYLES -- */
 .gallery-grid {
     display: grid;
-    /* This creates exactly two equal-width columns */
-    grid-template-columns: repeat(2, 1fr); 
+    /* This creates two equal-width columns */
+    grid-template-columns: repeat(2, 1fr);
     /* This increases the space between images */
-    gap: 25px; 
+    gap: 25px;
     margin-top: 20px;
     /* This makes the entire gallery container wider */
-    max-width: 1100px; 
+    max-width: 1100px;
     width: 90%;
-    
-}
+    /* FIXED: Removed extra closing brace that was here */
 }
 
 .gallery-item {
@@ -207,6 +209,24 @@ h3 { font-size: 1.5rem; }
     font-size: 0.9rem;
     color: #ccc;
 }
+
+/* This rule targets ONLY the last image's container */
+.gallery-item:last-child {
+    /* This makes the container span the full width of the row */
+    grid-column: 1 / -1;
+
+    /* These two lines center the image within that full-width container */
+    display: flex;
+    justify-content: center;
+}
+
+/* ADDED: This new rule targets ONLY the image INSIDE the last container */
+.gallery-item:last-child img {
+    /* Since the container is twice as wide, we set the image width to 50%.
+       This makes it the exact same size as the other four images. */
+    width: 50%;
+}
+
 
 /* --- MODAL STYLES --- */
 .modal {
@@ -300,11 +320,4 @@ h1:hover::after,
 .content section h2:hover::after,
 .content section h3:hover::after {
     transform: scaleX(1);
-}
-/* Add this new rule to handle the last image */
-.gallery-item:last-child {
-    /* This makes the last grid item span the full width (across both columns) */
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: center;
 }
