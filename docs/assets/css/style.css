@@ -13,20 +13,20 @@ h1, h2, h3 {
     font-family: 'Orbitron', sans-serif; /* Use Orbitron for headings */
 }
 
-/* 1. Video Background */
 .video-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Place it behind all other content */
+    z-index: -1; /* This pushes it behind everything else */
+    overflow: hidden;
 }
 
 .video-background video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the screen without stretching */
+    object-fit: cover; /* This makes the video cover the screen */
 }
 
 /* 2. Side Navigation */
