@@ -200,3 +200,14 @@ body, html {
     line-height: 1.7;
     color: #ccc;
 }
+.gradient-text {
+    /* 1. Set the background to a gradient */
+    background: linear-gradient(45deg, #a7b2ff, #4e60d8);
+
+    /* 2. Clip the background to the text shape */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* 3. Make the text color transparent to show the gradient */
+    color: transparent;
+}
