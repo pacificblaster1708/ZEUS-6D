@@ -1,3 +1,48 @@
+<!--
+README.md  ·  ZEUS-6D
+Particle.js background + markdown content
+-->
+
+<!-- ▸▸  Particle background  ◂◂ -->
+<div id="particles-js"></div>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number:  { value: 60,  density: { enable: true, value_area: 800 } },
+    color:   { value: "#00bfff" },
+    shape:   { type: "circle" },
+    opacity: { value: 0.4 },
+    size:    { value: 3 },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#00bfff",
+      opacity: 0.4,
+      width: 1
+    },
+    move: { enable: true, speed: 2 }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: true, mode: "push" }
+    }
+  }
+});
+</script>
+
+<style>
+/* keeps particles behind everything */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+</style>
 # ZEUS6D: Zero-shot Estimation of Unseen Shapes for 6DoF Pose Recovery
 
 **ZEUS6D** is a training-free deep learning pipeline for estimating the **6D pose** of known objects from a single RGB image using their CAD models. The framework is designed to work without object-specific training or fine-tuning, enabling fast and scalable deployment in real-world scenarios.
