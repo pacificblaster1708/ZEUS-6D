@@ -11,6 +11,7 @@ html, body {
     scroll-behavior: smooth;
     /* This is the key: makes the page background transparent */
     background: transparent;
+    font-size: 1rem;
 }
 
 .video-background {
