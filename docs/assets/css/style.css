@@ -1,4 +1,6 @@
 /* Basic Reset & Smooth Scroll */
+/* Add this line at the top of style.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap');
 body, html {
     margin: 0;
     padding: 0;
