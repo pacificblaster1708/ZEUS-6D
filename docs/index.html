@@ -18,7 +18,8 @@
 <div class = "content-wrapper">
    <nav class="side-nav">
     <a href="#home" class="nav-button active">Home</a>
-    <a href="#about" class="nav-button">About</a>
+
+<button id="open-about-modal" class="nav-button">About</button>
     <a href="#demo" class="nav-button">Demo</a>
     <a href="#gallery" class="nav-button">Gallery</a>
     <a href="#application" class="nav-button">Application</a>
@@ -42,32 +43,7 @@
         </div>
     </div>
 </section>
-       <section id="about">
-    <div class="about-content">
-        <h2 class="gradient-text">About The Project</h2>
-        <p>
-            Estimating an object's precise 3D rotation and translation (6D Pose) from an image is a fundamental challenge in computer vision, with applications in robotics, augmented reality, and autonomous systems. This project introduces a deep learning model designed to tackle this challenge efficiently.
-        </p>
-    </div>
-
-    <div class="pipeline-container">
-        <div class="pipeline-step">
-            <img src="assets/images/target-pipeline.jpg" alt="Target Pipeline">
-            <h3>1. Target Pipeline</h3>
-            <p>A brief description of the target pipeline process goes here.</p>
-        </div>
-        <div class="pipeline-step">
-            <img src="assets/images/query-pipeline.jpg" alt="Query Pipeline">
-            <h3>2. Query Pipeline</h3>
-            <p>A brief description of the query pipeline process goes here.</p>
-        </div>
-        <div class="pipeline-step">
-            <img src="assets/images/pose-estimation-pipeline.jpg" alt="Pose Estimation Pipeline">
-            <h3>3. Pose Estimation</h3>
-            <p>A brief description of the final pose estimation process goes here.</p>
-        </div>
-    </div>
-    </section>
+       
         <section id="demo">
     <h2 class="gradient-text">Live Demo</h2>
 
@@ -121,6 +97,25 @@
     </main>
  </div>
     <script src="assets/js/main.js"></script>
-   
+   <div id="about-modal" class="modal">
+    <div class="modal-content">
+        <button class="close-button">&times;</button>
+        <h2 class="gradient-text">About The Project</h2>
+        <div class="modal-tabs">
+            <button class="modal-tab-button active" data-content-id="intro-content">Intro</button>
+            <button class="modal-tab-button" data-content-id="target-pipeline-content">Target Pipeline</button>
+            <button class="modal-tab-button" data-content-id="query-pipeline-content">Query Pipeline</button>
+            <button class="modal-tab-button" data-content-id="pose-estimation-content">Pose Estimation</button>
+        </div>
+        <div class="modal-display-content"></div>
+    </div>
+</div>
+
+<div id="modal-hidden-content" style="display: none;">
+    <div id="intro-content"><h3>Introduction</h3><p>Estimating an object's precise 3D rotation and translation (6D Pose) from an image is a fundamental challenge in computer vision, with applications in robotics, augmented reality, and autonomous systems.</p></div>
+    <div id="target-pipeline-content"><h3>Target Pipeline</h3><p>The process involves analyzing the target object to create a robust model for later identification.</p><img src="assets/images/target-pipeline.jpg" alt="Target Pipeline"></div>
+    <div id="query-pipeline-content"><h3>Query Pipeline</h3><p>The Query Pipeline takes a new image as input and processes it to find features that can be matched against the target model.</p><img src="assets/images/query-pipeline.jpg" alt="Query Pipeline"></div>
+    <div id="pose-estimation-content"><h3>Pose Estimation</h3><p>The Pose Estimation stage compares the features from the query and target to calculate the precise 6D pose.</p><img src="assets/images/pose-estimation-pipeline.jpg" alt="Pose Estimation"></div>
+</div>
 </body>
 </html>
