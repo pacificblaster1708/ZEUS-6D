@@ -168,12 +168,27 @@ h3 { font-size: 1.5rem; }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax as needed */
+    gap: 15px; /* Adjust the gap as needed */
     margin-top: 20px;
 }
-.gallery-grid .gallery-item {
+
+.gallery-item {
     text-align: center;
+}
+
+.gallery-item img {
+    width: 100%; /* Ensures images scale down */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px;
+    border: 3px solid #555;
+    display: block;
+}
+
+.gallery-item .caption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
 }
 
 /* --- MODAL STYLES --- */
