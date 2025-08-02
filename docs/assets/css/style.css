@@ -321,3 +321,9 @@ h1:hover::after,
 .content section h3:hover::after {
     transform: scaleX(1);
 }
+/* This new rule controls the size of the demo GIF */
+.demo-gif {
+    /* Change this percentage to make it bigger or smaller */
+    max-width: 60%;
+    height: auto;
+}
