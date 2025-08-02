@@ -41,6 +41,10 @@ h3 {
     height: 100%;
     object-fit: cover; /* This makes the video cover the screen */
 }
+.content-wrapper {
+    position: relative;
+    z-index: 2; /* Higher z-index than the video */
+}
 
 /* 2. Side Navigation */
 .side-nav {
