@@ -14,3 +14,18 @@ $accent-color:     #ffe600;
 body { background:$background-color; color:$text-color; }
 h1,h2,h3{ color:$accent-color; }
 a{ color:$link-color; }
+/* Zeus Lightning Flash Animation */
+.lightning-flash {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(255,255,255,0.13); /* Lightning flash effect */
+  pointer-events: none;
+  z-index: 0;
+  animation: lightning 7s infinite;
+}
+@keyframes lightning {
+  0%, 96%, 100% { opacity: 0; }
+  97% { opacity: 1; }
+  98% { opacity: 0.4; }
+  99% { opacity: 0; }
+}
