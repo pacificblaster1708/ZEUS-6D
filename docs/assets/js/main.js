@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- INCREASE VIDEO SPEED ---
+    // This line selects the video and sets its playback speed.
+    // Adjust the '1.75' value to make it faster or slower.
+    const backgroundVideo = document.querySelector('.video-background video');
+    if (backgroundVideo) {
+        backgroundVideo.playbackRate = 1.75;
+    }
+
     // --- SIDE NAVIGATION SCROLL LOGIC ---
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.side-nav a.nav-button');
