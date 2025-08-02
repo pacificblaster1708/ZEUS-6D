@@ -33,3 +33,49 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 });
+// --- MODAL LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('about-modal');
+    if (modal) {
+        const openBtn = document.getElementById('open-about-modal');
+        const closeBtn = modal.querySelector('.close-button');
+        const modalTabs = modal.querySelector('.modal-tabs');
+        const modalDisplay = modal.querySelector('.modal-display-content');
+
+        if (openBtn) {
+            openBtn.onclick = function() {
+                modal.classList.add('active');
+                modal.querySelector('.modal-tab-button').click();
+            }
+        }
+
+        if (closeBtn) {
+            closeBtn.onclick = function() {
+                modal.classList.remove('active');
+            }
+        }
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        if (modalTabs) {
+            const tabButtons = modalTabs.querySelectorAll('.modal-tab-button');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const contentId = button.dataset.contentId;
+                    const newContent = document.getElementById(contentId);
+
+                    if (modalDisplay && newContent) {
+                        modalDisplay.innerHTML = newContent.innerHTML;
+                    }
+
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+            });
+        }
+    }
+});
