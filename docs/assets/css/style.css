@@ -29,10 +29,18 @@ body, html {
     position: fixed;
     top: 50%;
     left: 20px;
-    transform: translateY(-50%); /* Vertically center the nav */
+    transform: translateY(-50%);
     z-index: 10;
     display: flex;
     flex-direction: column;
+    /* Add these two lines */
+    opacity: 0.3;
+    transition: opacity 0.4s ease;
+}
+
+/* Add this new rule for the hover effect */
+.side-nav:hover {
+    opacity: 1;
 }
 
 /* --- REPLACE WITH THIS ENTIRE BLOCK --- */
