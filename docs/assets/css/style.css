@@ -159,3 +159,44 @@ body, html {
     color: #ccc;
     margin-top: 10px;
 }
+/* -- UPDATED ABOUT SECTION STYLES -- */
+
+/* Remove the old text-align rule if you have it */
+.about-content {
+    text-align: initial; /* Resets alignment */
+}
+
+/* The new two-column container */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Left column is 1/3, right is 2/3 */
+    gap: 60px; /* Space between the columns */
+    align-items: center; /* Vertically align the content of both columns */
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-left h2 {
+    font-size: 3.5rem; /* A good size for the heading */
+    line-height: 1.2;
+}
+
+.about-left h3 {
+    margin-top: 40px;
+}
+
+.about-left ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+.about-left li {
+    padding: 8px 0;
+    border-bottom: 1px solid #444; /* Separator lines */
+}
+
+.about-right p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ccc;
+}
