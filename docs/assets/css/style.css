@@ -254,3 +254,36 @@ h3 { font-size: 1.5rem; }
     margin-top: 20px;
     border-radius: 5px;
 }
+/* -- HEADING HOVER SHINE EFFECT -- */
+
+/* Target the main section headings */
+.content section h2,
+.content section h3 {
+    position: relative; /* Needed to position the underline */
+    display: inline-block; /* Ensures the underline is only as wide as the text */
+    padding-bottom: 8px; /* Adds a little space for the shine */
+}
+
+/* This creates the line itself, but it's hidden initially */
+.content section h2::after,
+.content section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #00ffff; /* Neon cyan color */
+    box-shadow: 0 0 10px #00ffff, 0 0 15px #00ffff; /* The glow effect */
+    
+    /* Animation properties */
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease-out;
+}
+
+/* This makes the line appear when you hover over the heading */
+.content section h2:hover::after,
+.content section h3:hover::after {
+    transform: scaleX(1);
+}
