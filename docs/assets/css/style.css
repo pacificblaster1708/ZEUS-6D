@@ -78,7 +78,7 @@ h3 { font-size: 1.5rem; }
 }
 
 .nav-button {
-    padding: 10px;
+    padding: 14px; /* Increased from 10px */
     margin-bottom: 15px;
     background-color: #333;
     color: #fff;
@@ -91,14 +91,13 @@ h3 { font-size: 1.5rem; }
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 80px;
+    min-width: 100px; /* Increased from 80px */
 }
 .nav-button:hover { background-color: #555; border-color: #777; }
 .nav-button.active { background-color: #eee; border-color: #fff; color: #000; }
 .github-button { min-width: 0; }
 .github-button svg { width: 24px; height: 24px; fill: #fff; transition: fill 0.3s; }
 .nav-button:hover svg { fill: #000; }
-
 /* --- MOUSE TRAIL --- */
 .trail {
   position: absolute;
