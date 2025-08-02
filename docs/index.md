@@ -52,6 +52,7 @@ particlesJS("particles-js", {
 }
 </style>
 <div class="lightning-flash"></div>
+<img src="examples/lightening.jpeg" alt="Zeus lightning bolt" width="48" style="vertical-align:-15px;">
 
 # ⚡ZEUS6D⚡: Zero-shot Estimation of Unseen Shapes for 6DoF Pose Recovery
 
