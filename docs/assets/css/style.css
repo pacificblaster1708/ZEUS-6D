@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap');
 
 /* --- CORE LAYOUT & BACKGROUND --- */
+/* Replace with this */
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     color: white;
     scroll-behavior: smooth;
-    background: #000;
+    background: transparent; /* This allows the video to be seen */
     font-size: 1rem;
 }
 
