@@ -1,40 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // --- SIDE NAVIGATION SCROLL LOGIC ---
     const sections = document.querySelectorAll('section');
-    const navButtons = document.querySelectorAll('.nav-button');
+    const navLinks = document.querySelectorAll('.side-nav a.nav-button');
+    if (sections.length > 0 && navLinks.length > 0) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.6
+        };
 
-    const observerOptions = {
-        root: null, // Watch for intersection in the viewport
-        rootMargin: '0px',
-        threshold: 0.5 // Trigger when 50% of the section is visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Get the ID of the visible section
-                const visibleSectionId = entry.target.id;
-
-                // Remove 'active' class from all buttons
-                navButtons.forEach(button => {
-                    button.classList.remove('active');
-                });
-
-                // Add 'active' class to the button that corresponds to the visible section
-                const activeButton = document.querySelector(`.nav-button[href="#${visibleSectionId}"]`);
-                if (activeButton) {
-                    activeButton.classList.add('active');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const visibleSectionId = entry.target.id;
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${visibleSectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
-            }
-        });
-    }, observerOptions);
+            });
+        }, observerOptions);
 
-    // Tell the observer to watch all sections
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-});
-// --- MODAL LOGIC ---
-document.addEventListener('DOMContentLoaded', () => {
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    }
+
+    // --- MODAL LOGIC ---
     const modal = document.getElementById('about-modal');
     if (modal) {
         const openBtn = document.getElementById('open-about-modal');
@@ -45,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (openBtn) {
             openBtn.onclick = function() {
                 modal.classList.add('active');
+                // Load initial content by clicking the first tab
                 modal.querySelector('.modal-tab-button').click();
             }
         }
@@ -78,4 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+});
+
+
+// --- MOUSE TRAIL EFFECT (can stay outside) ---
+document.addEventListener('mousemove', (e) => {
+    const trail = document.createElement('span');
+    trail.className = 'trail';
+    document.body.appendChild(trail);
+
+    trail.style.left = e.clientX + 'px';
+    trail.style.top = e.clientY + 'px';
+
+    setTimeout(() => {
+        trail.remove();
+    }, 800);
 });
