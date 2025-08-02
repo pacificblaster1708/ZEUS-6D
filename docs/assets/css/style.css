@@ -10,7 +10,20 @@ body, html {
     scroll-behavior: smooth;
 }
 h1, h2, h3 {
-    font-family: 'Orbitron', sans-serif; /* Use Orbitron for headings */
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1.3; /* Improves spacing between lines */
+}
+
+h1 {
+    font-size: 4rem; /* Large for the main title */
+}
+
+h2 {
+    font-size: 3rem; /* Slightly smaller for section titles */
+}
+
+h3 {
+    font-size: 1.5rem; /* For sub-headings like "Key Features" */
 }
 
 .video-background {
@@ -171,39 +184,14 @@ h1, h2, h3 {
     text-align: initial; /* Resets alignment */
 }
 
-/* The new two-column container */
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* Left column is 1/3, right is 2/3 */
-    gap: 60px; /* Space between the columns */
-    align-items: center; /* Vertically align the content of both columns */
-    max-width: 1200px;
-    width: 100%;
-}
-
-.about-left h2 {
-    font-size: 3.5rem; /* A good size for the heading */
-    line-height: 1.2;
-}
-
-.about-left h3 {
-    margin-top: 40px;
-}
-
-.about-left ul {
-    list-style: none; /* Remove default bullet points */
-    padding: 0;
-}
-
-.about-left li {
-    padding: 8px 0;
-    border-bottom: 1px solid #444; /* Separator lines */
-}
-
-.about-right p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #ccc;
+/* -- NEW ABOUT SECTION STYLES -- */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally centers everything */
+    text-align: center;  /* Centers the text */
+    max-width: 900px;    /* Constrains the width for readability */
+    margin: 0 auto;      /* Ensures the container itself is centered */
 }
 .gradient-text {
     /* 1. Set the background to a gradient */
