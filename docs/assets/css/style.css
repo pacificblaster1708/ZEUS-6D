@@ -327,3 +327,8 @@ h1:hover::after,
     max-width: 60%;
     height: auto;
 }
+/* New rule to increase the size of the application video container */
+#application .content-block {
+    /* The default size is 900px. You can change this value. */
+    max-width: 1100px;
+}
