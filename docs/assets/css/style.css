@@ -99,3 +99,63 @@ body, html {
     align-items: center;
     font-size: 3em;
 }
+.home-content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.cta-buttons a {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 0 10px;
+    background-color: #eee;
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.cta-buttons a:hover {
+    transform: scale(1.05);
+}
+
+/* -- ABOUT SECTION STYLES -- */
+.about-content {
+    max-width: 800px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.about-content ul {
+    list-style-type: '⚡ '; /* Fun list-style to match the theme */
+    padding-left: 20px;
+}
+
+/* -- DEMO SECTION STYLES -- */
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.demo-item img {
+    width: 100%;
+    border: 2px solid #555;
+    border-radius: 5px;
+}
+
+.demo-item p {
+    color: #ccc;
+    margin-top: 10px;
+}
