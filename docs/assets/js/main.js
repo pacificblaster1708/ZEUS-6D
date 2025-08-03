@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- FULLSCREEN VIDEO LOOP LOGIC ---
     const video = document.getElementById('background-video');
     if (video) {
-        video.playbackRate = 1.75;
+        video.playbackRate = 2.75;
 
         const playNext = () => {
             video.classList.toggle('flipped');
