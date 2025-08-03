@@ -202,21 +202,22 @@ h3 { font-size: 1.5rem; }
     height: auto;
 }
 
-/* -- FLOWCHART SECTION STYLES -- */
-/* -- FLOWCHART SECTION STYLES -- */
+/* -- FLOWCHART SECTION STYLES (UPDATED) -- */
 .flowchart-container {
     width: 90%;
     max-width: 1200px;
-    /* This automatically handles horizontal centering */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px 0;
+    margin: 30px auto 0 auto; /* Shorthand for top, auto left/right, 0 bottom */
+    display: flex; /* Use flexbox for robust centering */
+    justify-content: center; /* Center the diagram horizontally */
 }
+
 .flowchart-container .mxgraph {
-    background: transparent !important; /* Forces transparent background */
+    background: transparent !important;
     border: 3px solid #555 !important;
     border-radius: 8px;
+    max-width: 100%; /* Ensure diagram does not overflow its container */
 }
+
 
 /* --- MODAL STYLES --- */
 .modal {
