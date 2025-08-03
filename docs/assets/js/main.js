@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     // --- FULLSCREEN VIDEO LOOP LOGIC ---
     const video = document.getElementById('background-video');
     if (video) {
@@ -15,21 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         video.addEventListener('ended', playNext);
     }
 
-    // --- TRANSPARENT FLOWCHART LOGIC ---
-    const flowchartIframe = document.getElementById('flowchart-iframe');
-    if (flowchartIframe) {
-        flowchartIframe.onload = () => {
-            try {
-                const iframeDoc = flowchartIframe.contentWindow.document;
-                // Access the content inside the iframe and set its background to transparent
-                iframeDoc.body.style.backgroundColor = 'transparent';
-                // ADDED: Hide potential scrollbars inside the iframe itself
-                iframeDoc.body.style.overflow = 'hidden';
-            } catch (e) {
-                console.error("Could not access iframe content. Check same-origin policy.", e);
-            }
-        };
-    }
+    // --- REMOVED: FLOWCHART IFRAME LOGIC ---
+    // (No need to access flowchart-iframe anymore! It no longer exists.)
 
     // --- SIDE NAVIGATION SCROLL LOGIC ---
     const sections = document.querySelectorAll('section');
@@ -106,8 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-// --- MOUSE TRAIL EFFECT (can stay outside) ---
+// --- MOUSE TRAIL EFFECT ---
 document.addEventListener('mousemove', (e) => {
     const trail = document.createElement('span');
     trail.className = 'trail';
@@ -115,7 +100,6 @@ document.addEventListener('mousemove', (e) => {
 
     trail.style.left = e.clientX + 'px';
     trail.style.top = e.clientY + 'px';
-
     setTimeout(() => {
         trail.remove();
     }, 800);
