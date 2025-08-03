@@ -105,50 +105,51 @@
     </div>
 
     <div id="modal-hidden-content" style="display: none;">
-        <div id="intro-content">
-          <h3>Figure 1 — End-to-End Pipeline Overview</h3>
-          <p>This schematic situates every processing stage in a single frame.</p>
-          <p><strong>Inputs:</strong> A watertight CAD mesh (left) and a cropped RGB scene image (right).</p>
-          <p><strong>Dual frozen encoders:</strong> A vision backbone Φ maps RGB pixels to high-dimensional appearance features, while a geometric backbone Ψ maps 3-D vertices to shape features. Both remain fixed (no fine-tuning), preserving their large-scale pre-training priors.</p>
-          <p><strong>Bidirectional projections:</strong> Blue arrows (3D → 2D) rasterise mesh vertices into image space; green arrows (2D → 3D) lift image-plane predictions back onto the surface. This ensures every surface point acquires both visual and geometric descriptors.</p>
-          <p><strong>Descriptor fusion:</strong> Visual and geometric embeddings are concatenated and ℓ₂-normalised, forming a modality-agnostic 128-D signature for each point. The result is a common representation in which CAD and real observations are directly comparable.</p>
-          <img src="assets/images/overall-pipeline.jpeg" alt="Overall Pipeline">
-        </div>
+  <div id="intro-content">
+    <h3>Figure 1 — End-to-End Pipeline Overview</h3>
+    <p>This schematic situates every processing stage in a single frame.</p>
+    <p><strong>Inputs:</strong> A watertight CAD mesh (left) and a cropped RGB scene image (right).</p>
+    <p><strong>Dual frozen encoders:</strong> A vision backbone &Phi; maps RGB pixels to high-dimensional appearance features, while a geometric backbone &Psi; maps 3-D vertices to shape features. Both remain fixed (no fine-tuning), preserving their large-scale pre-training priors.</p>
+    <p><strong>Bidirectional projections:</strong> Blue arrows (3D &rarr; 2D) rasterise mesh vertices into image space; green arrows (2D &rarr; 3D) lift image-plane predictions back onto the surface. This ensures every surface point acquires both visual and geometric descriptors.</p>
+    <p><strong>Descriptor fusion:</strong> Visual and geometric embeddings are concatenated and ℓ<sub>2</sub>-normalised, forming a modality-agnostic 128-D signature for each point. The result is a common representation in which CAD and real observations are directly comparable.</p>
+    <img src="assets/images/overall-pipeline.jpeg" alt="Overall Pipeline">
+  </div>
 
-        <div id="target-pipeline-content">
-          <h3>Figure 2 — Target-Side Feature Extraction</h3>
-          <p>This zooms into the right-hand branch of Figure 1.</p>
-          <p><strong>Instance segmentation:</strong> A foundation-scale model (e.g., SAM) isolates the object mask without class supervision.</p>
-          <p><strong>Depth augmentation:</strong> Either sensed depth or monocular-depth inference converts the mask into a partial point cloud \(P_T^{\text{sparse}}\).</p>
-          <p><strong>Appearance descriptors (\(V_T\)):</strong> Φ processes RGB patches; 2D → 3D projection anchors each descriptor to its 3-D point.</p>
-          <p><strong>Shape descriptors (\(G_T\)):</strong> Ψ encodes local surface curvature, normal direction, and Laplacian context.</p>
-          <p><strong>Feature fusion (\(F_T\)):</strong> Concatenation of \(V_T\) and \(G_T\) yields a robust per-point descriptor resilient to illumination change and sensor noise.</p>
-          <img src="assets/images/target-pipeline.jpeg" alt="Target Pipeline">
-        </div>
+  <div id="target-pipeline-content">
+    <h3>Figure 2 — Target-Side Feature Extraction</h3>
+    <p>This zooms into the right-hand branch of Figure 1.</p>
+    <p><strong>Instance segmentation:</strong> A foundation-scale model (e.g., SAM) isolates the object mask without class supervision.</p>
+    <p><strong>Depth augmentation:</strong> Either sensed depth or monocular-depth inference converts the mask into a partial point cloud <b>P<sub>T</sub><sup>sparse</sup></b>.</p>
+    <p><strong>Appearance descriptors (<b>V<sub>T</sub></b>):</strong> &Phi; processes RGB patches; 2D &rarr; 3D projection anchors each descriptor to its 3-D point.</p>
+    <p><strong>Shape descriptors (<b>G<sub>T</sub></b>):</strong> &Psi; encodes local surface curvature, normal direction, and Laplacian context.</p>
+    <p><strong>Feature fusion (<b>F<sub>T</sub></b>):</strong> Concatenation of <b>V<sub>T</sub></b> and <b>G<sub>T</sub></b> yields a robust per-point descriptor resilient to illumination change and sensor noise.</p>
+    <img src="assets/images/target-pipeline.jpeg" alt="Target Pipeline">
+  </div>
 
-        <div id="query-pipeline-content">
-          <h3>Figure 3 — Query-Side Feature Extraction</h3>
-          <p>Here the same operations are applied to the CAD model, but under controlled conditions.</p>
-          <p><strong>Icosahedral camera sampling:</strong> Forty-two uniformly distributed viewpoints guarantee full surface coverage.</p>
-          <p><strong>Multi-view rendering:</strong> Each view produces an RGB image and a visibility buffer; Φ extracts 2-D appearance features.</p>
-          <p><strong>Back-projection and aggregation:</strong> Per-pixel descriptors are projected onto visible vertices and averaged over all views, integrating colour evidence into the mesh.</p>
-          <p><strong>Geometric encoding:</strong> Ψ generates intrinsic shape descriptors directly on the mesh.</p>
-          <p><strong>Fusion to \(F_Q\):</strong> As before, visual and geometric channels are combined into a unified 128-D template descriptor set.</p>
-          <img src="assets/images/query-pipeline.jpeg" alt="Query Pipeline">
-        </div>
+  <div id="query-pipeline-content">
+    <h3>Figure 3 — Query-Side Feature Extraction</h3>
+    <p>Here the same operations are applied to the CAD model, but under controlled conditions.</p>
+    <p><strong>Icosahedral camera sampling:</strong> Forty-two uniformly distributed viewpoints guarantee full surface coverage.</p>
+    <p><strong>Multi-view rendering:</strong> Each view produces an RGB image and a visibility buffer; &Phi; extracts 2-D appearance features.</p>
+    <p><strong>Back-projection and aggregation:</strong> Per-pixel descriptors are projected onto visible vertices and averaged over all views, integrating colour evidence into the mesh.</p>
+    <p><strong>Geometric encoding:</strong> &Psi; generates intrinsic shape descriptors directly on the mesh.</p>
+    <p><strong>Fusion to <b>F<sub>Q</sub></b>:</strong> As before, visual and geometric channels are combined into a unified 128-D template descriptor set.</p>
+    <img src="assets/images/query-pipeline.jpeg" alt="Query Pipeline">
+  </div>
 
-        <div id="pose-estimation-content">
-          <h3>Figure 4 — Correspondence-Driven Pose Estimation and Refinement</h3>
-          <p>The final panel translates descriptor similarity into a precise 6-DoF transform.</p>
-          <ul>
-            <li><strong>RANSAC <br>Robust coarse alignment:</strong> Hypothesises rigid transforms from minimal feature triplets; discards outliers via consensus.</li>
-            <li><strong>ICP (point-to-plane) <br>Continuous refinement:</strong> Minimises point-to-plane error; converges rapidly when initial pose is within ≈10 cm / 10°.</li>
-            <li><strong>Closed-form SVD <br>Exact least-squares fit:</strong> Umeyama solution gives the optimal rotation and translation for inlier correspondences.</li>
-            <li><strong>SAR (Symmetry-Aware Refinement) <br>Ambiguity resolution:</strong> Enumerates symmetry-equivalent rotations, retaining the one that maximises descriptor agreement.</li>
-            <li><strong>Similarity scoring <br>Confidence measure:</strong> Computes mean descriptor distance after alignment; low values indicate high pose fidelity.</li>
-          </ul>
-          <img src="assets/images/pose-estimation-pipeline.jpeg" alt="Pose Estimation">
-        </div>
-    </div>
+  <div id="pose-estimation-content">
+    <h3>Figure 4 — Correspondence-Driven Pose Estimation and Refinement</h3>
+    <p>The final panel translates descriptor similarity into a precise 6-DoF transform.</p>
+    <ul>
+      <li><strong>RANSAC<br>Robust coarse alignment:</strong> Hypothesises rigid transforms from minimal feature triplets; discards outliers via consensus.</li>
+      <li><strong>ICP (point-to-plane)<br>Continuous refinement:</strong> Minimises point-to-plane error; converges rapidly when initial pose is within ~10&nbsp;cm / 10&deg;.</li>
+      <li><strong>Closed-form SVD<br>Exact least-squares fit:</strong> Umeyama solution gives the optimal rotation and translation for inlier correspondences.</li>
+      <li><strong>SAR (Symmetry-Aware Refinement)<br>Ambiguity resolution:</strong> Enumerates symmetry-equivalent rotations, retaining the one that maximises descriptor agreement.</li>
+      <li><strong>Similarity scoring<br>Confidence measure:</strong> Computes mean descriptor distance after alignment; low values indicate high pose fidelity.</li>
+    </ul>
+    <img src="assets/images/pose-estimation-pipeline.jpeg" alt="Pose Estimation">
+  </div>
+</div>
+
 </body>
 </html>
