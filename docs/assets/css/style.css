@@ -202,22 +202,21 @@ h3 { font-size: 1.5rem; }
     height: auto;
 }
 
-/* -- FLOWCHART SECTION STYLES (UPDATED) -- */
+/* -- FLOWCHART SECTION STYLES -- */
 .flowchart-container {
     width: 90%;
     max-width: 1200px;
-    margin: 30px auto 0 auto; /* Shorthand for top, auto left/right, 0 bottom */
-    display: flex; /* Use flexbox for robust centering */
-    justify-content: center; /* Center the diagram horizontally */
+    margin: 30px auto 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .flowchart-container .mxgraph {
     background: transparent !important;
     border: 3px solid #555 !important;
     border-radius: 8px;
-    max-width: 100%; /* Ensure diagram does not overflow its container */
+    max-width: 100%;
 }
-
 
 /* --- MODAL STYLES --- */
 .modal {
@@ -242,8 +241,18 @@ h3 { font-size: 1.5rem; }
     max-width: 800px;
     position: relative;
     color: #fff;
+    text-align: left; /* Changed for better readability of new text */
+}
+.modal-content h3 {
     text-align: center;
 }
+.modal-content p, .modal-content ul {
+    line-height: 1.6;
+}
+.modal-content ul {
+    padding-left: 20px;
+}
+
 .close-button {
     color: #aaa;
     position: absolute;
@@ -278,9 +287,12 @@ h3 { font-size: 1.5rem; }
     border-color: #fff;
 }
 .modal-display-content img {
-    max-width: 80%;
+    max-width: 100%;
     margin-top: 20px;
     border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* -- HEADING HOVER SHINE EFFECT -- */
