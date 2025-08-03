@@ -26,7 +26,7 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.2s ease-in-out; /* Smooth transition for flipping */
+    /* REMOVED: The transition that caused the "flash" effect */
 }
 
 /* This class will be toggled by JavaScript to flip the video */
@@ -195,22 +195,35 @@ h3 { font-size: 1.5rem; }
     display: block;
 }
 
-/* This rule targets ONLY the last image's container */
 .gallery-item:last-child {
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
 }
 
-/* This rule targets ONLY the image INSIDE the last container */
 .gallery-item:last-child img {
     width: 50%;
 }
 
-/* This rule controls the size of the demo GIF */
 .demo-gif {
     max-width: 60%;
     height: auto;
+}
+
+
+/* -- FLOWCHART SECTION STYLES -- */
+.flowchart-container {
+    width: 90%;
+    height: 75vh; /* 75% of the viewport height */
+    max-width: 1400px;
+    margin-top: 30px;
+}
+
+.flowchart-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #555;
+    border-radius: 8px;
 }
 
 
@@ -306,18 +319,4 @@ h1:hover::after,
 .content section h2:hover::after,
 .content section h3:hover::after {
     transform: scaleX(1);
-}
-/* -- FLOWCHART SECTION STYLES -- */
-.flowchart-container {
-    width: 90%;
-    height: 75vh; /* 75% of the viewport height */
-    max-width: 1400px;
-    margin-top: 30px;
-}
-
-.flowchart-container iframe {
-    width: 100%;
-    height: 100%;
-    border: 3px solid #555;
-    border-radius: 8px;
 }
