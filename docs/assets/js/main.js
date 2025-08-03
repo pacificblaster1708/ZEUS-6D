@@ -20,8 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (flowchartIframe) {
         flowchartIframe.onload = () => {
             try {
+                const iframeDoc = flowchartIframe.contentWindow.document;
                 // Access the content inside the iframe and set its background to transparent
-                flowchartIframe.contentWindow.document.body.style.backgroundColor = 'transparent';
+                iframeDoc.body.style.backgroundColor = 'transparent';
+                // ADDED: Hide potential scrollbars inside the iframe itself
+                iframeDoc.body.style.overflow = 'hidden';
             } catch (e) {
                 console.error("Could not access iframe content. Check same-origin policy.", e);
             }
