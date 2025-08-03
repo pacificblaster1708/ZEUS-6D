@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- FULLSCREEN VIDEO LOOP LOGIC ---
     const video = document.getElementById('background-video');
     if (video) {
-        // Set the desired playback speed.
         video.playbackRate = 1.75;
 
         const playNext = () => {
@@ -14,10 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
         video.addEventListener('ended', playNext);
     }
 
-    // --- SIDE NAVIGATION SCROLL HIGHLIGHT ---
+    // --- REMOVED: All iframe logic is no longer needed. ---
+
+    // --- SIDE NAVIGATION SCROLL LOGIC ---
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.side-nav a.nav-button');
-
     if (sections.length > 0 && navLinks.length > 0) {
         const observerOptions = {
             root: null,
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- ABOUT MODAL LOGIC ---
+    // --- MODAL LOGIC ---
     const modal = document.getElementById('about-modal');
     if (modal) {
         const openBtn = document.getElementById('open-about-modal');
@@ -56,17 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
             openBtn.onclick = function() {
                 modal.classList.add('active');
                 modal.querySelector('.modal-tab-button').click();
-            };
+            }
         }
 
         if (closeBtn) {
             closeBtn.onclick = function() {
                 modal.classList.remove('active');
-            };
+            }
         }
 
         window.addEventListener('click', function(event) {
-            if (event.target === modal) {
+            if (event.target == modal) {
                 modal.classList.remove('active');
             }
         });
