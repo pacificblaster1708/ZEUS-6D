@@ -11,6 +11,7 @@ html, body {
     font-size: 1rem;
 }
 
+/* UPDATED VIDEO STYLES FOR FULLSCREEN */
 .video-background {
     position: fixed;
     top: 0;
@@ -168,6 +169,7 @@ h3 { font-size: 1.5rem; }
 }
 .home-content .cta-buttons a:hover { transform: scale(1.05); }
 
+
 /* -- GALLERY STYLES -- */
 .gallery-grid {
     display: grid;
@@ -177,9 +179,11 @@ h3 { font-size: 1.5rem; }
     max-width: 1100px;
     width: 90%;
 }
+
 .gallery-item {
     text-align: center;
 }
+
 .gallery-item img {
     width: 100%;
     height: auto;
@@ -193,6 +197,7 @@ h3 { font-size: 1.5rem; }
     display: flex;
     justify-content: center;
 }
+
 .gallery-item:last-child img {
     width: 50%;
 }
@@ -202,27 +207,24 @@ h3 { font-size: 1.5rem; }
     height: auto;
 }
 
+
 /* -- FLOWCHART SECTION STYLES -- */
 .flowchart-container {
-    width: 100%;
+    width: 90%;
+    /* CHANGED: Use viewport height to avoid page scrollbar */
+    height: 90vh; 
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
-    background: transparent;
-    box-shadow: none;
-    border: none;
-    /* Allow natural height for the diagram */
-    padding: 20px 0;
 }
 
-/* Style the embedded mxgraph div */
-.flowchart-container .mxgraph {
-    max-width: 100%;
+.flowchart-container iframe {
+    width: 100%;
+    height: 100%;
     border: 3px solid #555;
     border-radius: 8px;
-    box-sizing: border-box;
-    background: transparent;
 }
+
 
 /* --- MODAL STYLES --- */
 .modal {
@@ -287,7 +289,6 @@ h3 { font-size: 1.5rem; }
     margin-top: 20px;
     border-radius: 5px;
 }
-
 /* -- HEADING HOVER SHINE EFFECT -- */
 h1,
 .content section h2,
