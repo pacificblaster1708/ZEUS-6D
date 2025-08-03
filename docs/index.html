@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Simplified to a single full-screen video -->
+    <!-- Video Background -->
     <div class="video-background">
         <video id="background-video" muted playsinline>
             <source src="assets/videos/background.webm" type="video/webm">
@@ -16,16 +16,14 @@
         </video>
     </div>
 
-    <div class = "content-wrapper">
+    <div class="content-wrapper">
         <nav class="side-nav">
             <a href="#home" class="nav-button active">Home</a>
-            <!-- MOVED "ABOUT" BEFORE "FLOWCHART" -->
             <button id="open-about-modal" class="nav-button">About</button>
             <a href="#flowchart" class="nav-button">Flowchart</a>
             <a href="#demo" class="nav-button">Demo</a>
             <a href="#gallery" class="nav-button">Gallery</a>
             <a href="#application" class="nav-button">Application</a>
-            
             <a href="https://github.com/pitcher69/ZEUS6D/" target="_blank" class="nav-button github-button" title="My GitHub Profile">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
@@ -36,7 +34,7 @@
         <main class="content">
             <section id="home">
                 <div class="home-content">
-                    <h1 class = "gradient-text">⚡ZEUS6D⚡ : Training free Zero Shot 6D Pose Estimation Model</h1>
+                    <h1 class="gradient-text">⚡ZEUS6D⚡ : Training free Zero Shot 6D Pose Estimation Model</h1>
                     <p class="tagline">Accurately determining the 3D position and orientation of objects from a single image.</p>
                     <div class="cta-buttons">
                         <a href="#demo" class="cta-button">View Demo</a>
@@ -46,19 +44,17 @@
                 </div>
             </section>
 
-            <!-- -------- BEGIN UPDATED FLOWCHART SECTION -------- -->
+            <!-- FLOWCHART SECTION (embed, no iframe) -->
             <section id="flowchart">
                 <h2 class="gradient-text">Project Flowchart</h2>
                 <div class="flowchart-container">
-                    <!-- Direct embed of the diagram, NO IFRAME -->
                     <div class="mxgraph" style="max-width:100%;border:1px solid transparent;"
-                        data-mxgraph='{"highlight":"#0000ff","nav":true,"resize":true,"xml":"<mxfile host=\"app.diagrams.net\" agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36\" version=\"28.0.7\"><diagram name=\"Page-1\" id=\"aZrKGwb1maUwDrWq9_2M\"><mxGraphModel dx=\"7130\" dy=\"3835\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"850\" pageHeight=\"1100\" math=\"0\" shadow=\"0\"><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"x6CHhdUkws1HIm_VyeYb-16\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FFD700;strokeWidth=3;\" parent=\"1\" source=\"x6CHhdUkws1HIm_VyeYb-1\" target=\"x6CHhdUkws1HIm_VyeYb-9\" edge=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell>...[TRUNCATED: Full XML from your flowchart.html’s data-mxgraph here]...</diagram></mxfile>","toolbar":"pages zoom layers lightbox","page":0}'>
+                        data-mxgraph='{"highlight":"#0000ff","nav":true,"resize":true,"xml":"<mxfile host=\"app.diagrams.net\" agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36\" version=\"28.0.7\"><diagram name=\"Page-1\" id=\"aZrKGwb1maUwDrWq9_2M\"><mxGraphModel dx=\"7130\" dy=\"3835\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"850\" pageHeight=\"1100\" math=\"0\" shadow=\"0\"><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/>...[YOUR FULL XML GOES HERE, escaped, as in your flowchart.html]...</root></mxGraphModel></diagram></mxfile>","toolbar":"pages zoom layers lightbox","page":0}'>
                     </div>
                 </div>
-                <!-- Diagram viewer script -->
                 <script type="text/javascript" src="https://app.diagrams.net/js/viewer-static.min.js"></script>
             </section>
-            <!-- -------- END UPDATED FLOWCHART SECTION -------- -->
+            <!-- END FLOWCHART SECTION -->
 
             <section id="demo">
                 <h2 class="gradient-text">Live Demo</h2>
