@@ -203,13 +203,15 @@ h3 { font-size: 1.5rem; }
 }
 
 /* -- FLOWCHART SECTION STYLES -- */
+/* -- FLOWCHART SECTION STYLES -- */
 .flowchart-container {
-    width: 100%;
+    width: 90%;
     max-width: 1200px;
+    /* This automatically handles horizontal centering */
     margin-left: auto;
     margin-right: auto;
+    padding: 20px 0;
 }
-
 .flowchart-container .mxgraph {
     background: transparent !important; /* Forces transparent background */
     border: 3px solid #555 !important;
