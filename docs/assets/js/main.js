@@ -3,24 +3,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- FULLSCREEN VIDEO LOOP LOGIC ---
     const video = document.getElementById('background-video');
     if (video) {
-        // Set the desired playback speed. 2.0 is double speed.
+        // Set the desired playback speed.
         video.playbackRate = 1.75;
 
-        // Function to handle the looping effect
         const playNext = () => {
-            // Toggle the 'flipped' class on the video
             video.classList.toggle('flipped');
-            // Play the video
             video.play();
         };
 
-        // Start the first playback
         video.play();
-
-        // Add an event listener that waits for the video to end
         video.addEventListener('ended', playNext);
     }
 
+    // --- TRANSPARENT FLOWCHART LOGIC ---
+    const flowchartIframe = document.getElementById('flowchart-iframe');
+    if (flowchartIframe) {
+        flowchartIframe.onload = () => {
+            try {
+                // Access the content inside the iframe and set its background to transparent
+                flowchartIframe.contentWindow.document.body.style.backgroundColor = 'transparent';
+            } catch (e) {
+                console.error("Could not access iframe content. Check same-origin policy.", e);
+            }
+        };
+    }
 
     // --- SIDE NAVIGATION SCROLL LOGIC ---
     const sections = document.querySelectorAll('section');
