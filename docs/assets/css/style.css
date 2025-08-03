@@ -211,10 +211,9 @@ h3 { font-size: 1.5rem; }
 /* -- FLOWCHART SECTION STYLES -- */
 .flowchart-container {
     width: 90%;
-    /* CHANGED: Set a fixed, large height to prevent internal scrollbars. */
-    height: 1200px; 
+    /* CHANGED: Use viewport height to avoid page scrollbar */
+    height: 90vh; 
     max-width: 1400px;
-    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
 }
