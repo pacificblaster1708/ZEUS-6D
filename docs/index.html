@@ -7,21 +7,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Simplified to a single full-screen video -->
     <div class="video-background">
-        <div class="video-wrapper">
-            <video autoplay muted loop playsinline>
-                <source src="assets/videos/background.webm" type="video/webm">
-                <source src="assets/videos/background.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="video-wrapper mirrored">
-            <video autoplay muted loop playsinline>
-                <source src="assets/videos/background.webm" type="video/webm">
-                <source src="assets/videos/background.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+        <video id="background-video" muted playsinline>
+            <source src="assets/videos/background.webm" type="video/webm">
+            <source src="assets/videos/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <div class = "content-wrapper">
@@ -45,7 +37,7 @@
                 <div class="home-content">
                     <h1 class = "gradient-text">⚡ZEUS6D⚡ : Training free Zero Shot 6D Pose Estimation Model</h1>
                     <p class="tagline">Accurately determining the 3D position and orientation of objects from a single image.</p>
-                   <div class="cta-buttons">
+                    <div class="cta-buttons">
                         <a href="#demo" class="cta-button">View Demo</a>
                         <a href="https://drive.google.com/file/d/1fmEnqCRdL2BvbcRkeXqPtd1A101NqH0q/view?usp=sharing" class="cta-button">Read Paper</a>
                         <a href="https://github.com/pitcher69/ZEUS6D/" class="cta-button" target="_blank">Code</a>
@@ -67,26 +59,11 @@
                     <h2 class="gradient-text">Gallery</h2>
                     <p>Here are some sample results from our test dataset, showcasing performance under various conditions.</p>
                     <div class="gallery-grid">
-                        <div class="gallery-item">
-                            <img src="assets/images/image1.jpeg" alt="Results on LINEMOD dataset">
-                           
-                        </div>
-                        <div class="gallery-item">
-                            <img src="assets/images/image2.jpeg" alt="Results on YCB-Video dataset">
-                            >
-                        </div>
-                        <div class="gallery-item">
-                            <img src="assets/images/image3.jpeg" alt="Results on LINEMOD dataset">
-                           
-                        </div>
-                        <div class="gallery-item">
-                            <img src="assets/images/image4.jpeg" alt="Results on YCB-Video dataset">
-                            
-                        </div>
-                        <div class="gallery-item">
-                            <img src="assets/images/image5.jpeg" alt="Results on the T-LESS dataset">
-                            
-                        </div>
+                        <div class="gallery-item"><img src="assets/images/image1.jpeg" alt="Results on LINEMOD dataset"></div>
+                        <div class="gallery-item"><img src="assets/images/image2.jpeg" alt="Results on YCB-Video dataset"></div>
+                        <div class="gallery-item"><img src="assets/images/image3.jpeg" alt="Results on LINEMOD dataset"></div>
+                        <div class="gallery-item"><img src="assets/images/image4.jpeg" alt="Results on YCB-Video dataset"></div>
+                        <div class="gallery-item"><img src="assets/images/image5.jpeg" alt="Results on the T-LESS dataset"></div>
                     </div>
                 </div>
             </section>
