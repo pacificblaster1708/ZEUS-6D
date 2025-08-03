@@ -1,13 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- INCREASE VIDEO SPEED ---
-    // Selects ALL videos and sets the playback rate for each one.
-    const backgroundVideos = document.querySelectorAll('.video-background video');
-    if (backgroundVideos.length > 0) {
-        backgroundVideos.forEach(video => {
-            video.playbackRate = 1.75;
-        });
+    // --- FULLSCREEN VIDEO LOOP LOGIC ---
+    const video = document.getElementById('background-video');
+    if (video) {
+        // Set the desired playback speed. 2.0 is double speed.
+        video.playbackRate = 1.75;
+
+        // Function to handle the looping effect
+        const playNext = () => {
+            // Toggle the 'flipped' class on the video
+            video.classList.toggle('flipped');
+            // Play the video
+            video.play();
+        };
+
+        // Start the first playback
+        video.play();
+
+        // Add an event listener that waits for the video to end
+        video.addEventListener('ended', playNext);
     }
+
 
     // --- SIDE NAVIGATION SCROLL LOGIC ---
     const sections = document.querySelectorAll('section');
@@ -49,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (openBtn) {
             openBtn.onclick = function() {
                 modal.classList.add('active');
-                // Load initial content by clicking the first tab
                 modal.querySelector('.modal-tab-button').click();
             }
         }
